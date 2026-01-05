@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Fix Mozilla Firefox warning. -->
+  <!-- Jekyll don't add charset to "content-type" header -->
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="description" content="Bootstrap Sub-Menus">
+  <meta name="keywords" content="bootstrap dropdown jquery-plugin submenu">
+  <meta name="author" content="Vasily A.">
+  <meta name="robots" content="nofollow">
+  <meta name="google" content="notranslate">
+
+  <title>Bootstrap-submenu</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/octicons.css">
+  <link rel="stylesheet" href="css/zenburn.css">
+  <link rel="stylesheet" href="css/bootstrap-submenu.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+
+  <script src="js/jquery.js" defer></script>
+  <script src="js/bootstrap.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/highlight.js/8.8.0/highlight.min.js" defer></script>
+  <script src="js/bootstrap-submenu.js" defer></script>
+  <script src="js/docs.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+  <h1>Bootstrap-submenu</h1>
+  <p class="lead">Bootstrap Sub-Menus.</p>
+
+  <div class="btn-toolbar">
+    <a class="btn btn-primary m-b pull-left" href="https://github.com/vsn4ik/bootstrap-submenu/releases/download/v2.0.1/bootstrap-submenu-2.0.1-dist.zip" download>
+      <span class="octicon octicon-cloud-download"></span>
+      <span>Download</span>
+    </a>
+
+    <a id="gh-view-link" class="btn btn-default" href="https://github.com/vsn4ik/bootstrap-submenu">
+      <span class="octicon octicon-mark-github"></span>
+      <span>View on GitHub</span>
+    </a>
+  </div>
+</div>
+
+    <h2 id="installation">Installation</h2>
+
+<pre><code class="hljs xml">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"&gt;
+  &lt;link rel="stylesheet" href="dist/css/bootstrap-submenu.min.css"&gt;
+
+  &lt;script src="https://code.jquery.com/jquery-2.1.4.min.js" defer&gt;&lt;/script&gt;
+  &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer&gt;&lt;/script&gt;
+  &lt;script src="dist/js/bootstrap-submenu.min.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Enable Bootstrap-submenu via JavaScript:</p>
+
+<pre><code class="hljs javascript">// For v2 [data-toggle="dropdown"] is required for [data-submenu].
+// For v2 .dropdown-submenu &gt; [data-toggle="dropdown"] is forbidden.
+$('[data-submenu]').submenupicker();</code></pre>
+
+    <hr>
+    <h2 id="html-examples">Examples</h2>
+
+<h3>Dropdown</h3>
+<h4>With button</h4>
+<div class="dropdown m-b">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-submenu>
+    Dropdown <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+
+</div>
+
+<h4>With button-group</h4>
+<div class="btn-group">
+  <button class="btn btn-default" type="button">Dropdown</button>
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-submenu>
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+</div>
+
+<h4>With button (right align)</h4>
+<div class="dropdown m-b">
+  <button class="btn btn-default" type="button" data-toggle="dropdown" data-submenu>
+    Dropdown <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-right">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+</div>
+
+<h3>Dropup</h3>
+<h4>With button</h4>
+<div class="dropup m-b">
+  <button class="btn btn-default" type="button" data-toggle="dropdown" data-submenu>
+    Dropup <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+</div>
+
+<h4>With button-group</h4>
+<div class="btn-group dropup">
+  <button class="btn btn-default" type="button">Dropup</button>
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-submenu>
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+</div>
+
+<h4>With button (right align)</h4>
+<div class="dropup m-b">
+  <button class="btn btn-default" type="button" data-toggle="dropdown" data-submenu>
+    Dropup <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-right">
+  <li><a tabindex="0">Action</a></li>
+<li class="dropdown-submenu">
+  <a tabindex="0">Another action</a>
+
+  <ul class="dropdown-menu">
+    <li class="dropdown-header">Dropdown header</li>
+    <li><a tabindex="0">Sub action</a></li>
+    <li class="disabled"><a tabindex="0">Another sub action</a></li>
+    <li><a tabindex="0">Something else here</a></li>
+  </ul>
+</li>
+<li><a tabindex="0">Something else here</a></li>
+<li class="divider"></li>
+<li><a tabindex="0">Separated link</a></li>
+</ul>
+</div>
+
+<h3>Navbar</h3>
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand">Project Name</a>
+  </div>
+
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a tabindex="0" data-toggle="dropdown" data-submenu>
+          Dropdown<span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a tabindex="0">Action</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li class="dropdown-submenu">
+                <a tabindex="0">Another sub action</a>
+
+                <ul class="dropdown-menu">
+                  <li><a tabindex="0">Sub action</a></li>
+                  <li><a tabindex="0">Another sub action</a></li>
+                  <li><a tabindex="0">Something else here</a></li>
+                </ul>
+              </li>
+              <li><a tabindex="0">Something else here</a></li>
+              <li class="dropdown-submenu">
+                <a tabindex="0">Another action</a>
+
+                <ul class="dropdown-menu">
+                  <li><a tabindex="0">Sub action</a></li>
+                  <li><a tabindex="0">Another sub action</a></li>
+                  <li><a tabindex="0">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown-submenu">
+            <a tabindex="0">Another action</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li><a tabindex="0">Another sub action</a></li>
+              <li><a tabindex="0">Something else here</a></li>
+            </ul>
+          </li>
+          <li><a tabindex="0">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a tabindex="0">Separated link</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a tabindex="0" data-toggle="dropdown" data-submenu>
+          Dropdown 2<span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a tabindex="0">Action</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li class="dropdown-submenu">
+                <a tabindex="0">Another sub action</a>
+
+                <ul class="dropdown-menu">
+                  <li><a tabindex="0">Sub action</a></li>
+                  <li><a tabindex="0">Another sub action</a></li>
+                  <li><a tabindex="0">Something else here</a></li>
+                </ul>
+              </li>
+              <li><a tabindex="0">Something else here</a></li>
+            </ul>
+          </li>
+          <li><a tabindex="0">Another action</a></li>
+          <li class="dropdown-submenu">
+            <a tabindex="0">Something else here</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li><a tabindex="0">Another sub action</a></li>
+              <li><a tabindex="0">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li><a tabindex="0">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a tabindex="0" data-toggle="dropdown">
+          Dropdown 3<span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li><a tabindex="0">Action</a></li>
+          <li><a tabindex="0">Another action</a></li>
+          <li><a tabindex="0">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a tabindex="0">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h3>Pills</h3>
+<ul class="nav nav-pills">
+  <li class="active"><a tabindex="0">Regular link</a></li>
+  <li class="dropdown">
+    <a tabindex="0" data-toggle="dropdown" data-submenu>
+      Dropdown<span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li class="dropdown-submenu">
+        <a tabindex="0">Action</a>
+
+        <ul class="dropdown-menu">
+          <li><a tabindex="0">Sub action</a></li>
+          <li class="dropdown-submenu">
+            <a tabindex="0">Another sub action</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li><a tabindex="0">Another sub action</a></li>
+              <li><a tabindex="0">Something else here</a></li>
+            </ul>
+          </li>
+          <li><a tabindex="0">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a tabindex="0">Another action</a>
+
+        <ul class="dropdown-menu">
+          <li><a tabindex="0">Sub action</a></li>
+          <li><a tabindex="0">Another sub action</a></li>
+          <li><a tabindex="0">Something else here</a></li>
+        </ul>
+      </li>
+      <li><a tabindex="0">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a tabindex="0">Separated link</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a tabindex="0" data-toggle="dropdown" data-submenu>
+      Dropdown 2<span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li class="dropdown-submenu">
+        <a tabindex="0" data-toggle="dropdown">Action</a>
+
+        <ul class="dropdown-menu">
+          <li><a tabindex="0">Sub action</a></li>
+          <li class="dropdown-submenu">
+            <a tabindex="0">Another sub action</a>
+
+            <ul class="dropdown-menu">
+              <li><a tabindex="0">Sub action</a></li>
+              <li><a tabindex="0">Another sub action</a></li>
+              <li><a tabindex="0">Something else here</a></li>
+            </ul>
+          </li>
+          <li><a tabindex="0">Something else here</a></li>
+        </ul>
+      </li>
+      <li><a tabindex="0">Another action</a></li>
+      <li class="dropdown-submenu">
+        <a tabindex="0">Something else here</a>
+
+        <ul class="dropdown-menu">
+          <li><a tabindex="0">Sub action</a></li>
+          <li><a tabindex="0">Another sub action</a></li>
+          <li><a tabindex="0">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li><a tabindex="0">Separated link</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a tabindex="0" data-toggle="dropdown">
+      Dropdown 3<span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li><a tabindex="0">Action</a></li>
+      <li><a tabindex="0">Another action</a></li>
+      <li><a tabindex="0">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a tabindex="0">Separated link</a></li>
+    </ul>
+  </li>
+</ul>
+
+    <hr>
+    <div class="clearfix">
+  <button id="scroll_top" class="btn btn-primary pull-right" type="button" title="Return to top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    <span>Top</span>
+  </button>
+</div>
+
+<footer>
+  <p class="text-center text-muted">&copy; Vasily A., 2014&ndash;2015</p>
+</footer>
+  </div>
+</body>
+</html>
