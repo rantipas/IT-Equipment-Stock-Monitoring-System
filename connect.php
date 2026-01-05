@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-$serverName = "10.48.10.172"; //serverName\instanceName
+$serverName = "192.168.10.172"; //serverName\instanceName
 $connectionInfo = array( "Database"=>"AMDB", "UID"=>"itam", "PWD"=>"DtDb@2905");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
@@ -16,6 +16,7 @@ if( $conn ) {
      echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));
 }
+
 
 
 
